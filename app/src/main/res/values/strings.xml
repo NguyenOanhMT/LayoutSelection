@@ -1,0 +1,36 @@
+<resources>
+    <string name="app_name">Selection</string>
+
+    <string name="title_hot_today">Wendsaday deal</string>
+    <string name="pice_discount1">25% off for a table of two</string>
+    <string name="pice1">Dinner 25% off, and only 68USD/each in Solois Coffee</string>
+
+    <string name="title_city1">Awesome Drinks</string>
+    <string name="title_city2">Healthy &amp; Green</string>
+
+    <string name="title_speical1">Soloist Coffee</string>
+    <string name="place1">An elegant place</string>
+    <string name="pice_discount21">68USD/Each</string>
+    <string name="pice21"><strike>$120</strike></string>
+    <string name="title_speical2">Croissant Fun</string>
+    <string name="place2">The best in town</string>
+    <string name="pice_discount22">10USD/Each</string>
+    <string name="pice22"><strike>$20</strike></string>
+
+    <string name="title_colum1">Best Brunch Places</string>
+    <string name="title_colum2">Eating Alone</string>
+    <string name="title_colum3">Party Every Night</string>
+
+    <string name="view_more">View More</string>
+    <string name="awesome">Awesome deals unlocked every day</string>
+    <string name="most_popular">Most popular places for you each day</string>
+    <string name="hot_today">Hot Today</string>
+    <string name="city_guide">City Guide</string>
+    <string name="we_hand_picked">We hand-picked some great places for you.</string>
+    <string name="columns">Columns</string>
+    <string name="select">Select</string>
+    <string name="store">Store</string>
+    <string name="magazine">Magazine</string>
+    <string name="cart">Cart</string>
+    <string name="me">Me</string>
+</resources>
