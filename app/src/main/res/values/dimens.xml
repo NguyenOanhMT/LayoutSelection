@@ -2,6 +2,7 @@
 <resources>
     <dimen name="sp13">13sp</dimen>
     <dimen name="sp10">10sp</dimen>
+    <dimen name="sp11">11sp</dimen>
     <dimen name="sp15">15sp</dimen>
     <dimen name="sp17">17sp</dimen>
     <dimen name="sp21">21sp</dimen>

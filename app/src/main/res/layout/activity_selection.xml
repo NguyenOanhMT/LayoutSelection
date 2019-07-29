@@ -5,39 +5,10 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@color/colorWhite"
     tools:context=".Selection">
 
-
-    <ImageView
-        android:id="@+id/imv_logo"
-        android:layout_width="@dimen/dp0"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="@dimen/dp20"
-        app:layout_constraintDimensionRatio="w,94:22"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:srcCompat="@drawable/ic_foodi_logo" />
-
-    <ImageView
-        android:id="@+id/imv_search"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginEnd="@dimen/dp20"
-        app:layout_constraintBottom_toBottomOf="@+id/imv_logo"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toTopOf="@+id/imv_logo"
-        app:srcCompat="@drawable/ic_search_icon" />
-
-    <View
-        android:id="@+id/view"
-        android:background="@color/colorGrey_two"
-        android:layout_width="match_parent"
-        android:layout_height="2dp"
-        android:layout_marginTop="20dp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/imv_logo" />
+    <include layout="@layout/title_top"/>
 
     <ScrollView
         android:id="@+id/scroll_view"
@@ -69,23 +40,27 @@
                         android:id="@+id/hot_day"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
+                        android:layout_alignParentStart="true"
+                        android:layout_centerInParent="true"
                         android:text="@string/hot_today"
                         android:textColor="@color/colorBlack"
                         android:layout_marginTop="@dimen/dp27"
-                        android:textSize="@dimen/sp21" />
+                        android:textSize="@dimen/sp21"
+                        tools:ignore="RelativeOverlap" />
 
                     <LinearLayout
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_alignParentEnd="true"
                         android:layout_centerInParent="true"
-                        android:layout_marginRight="@dimen/dp20"
-                        android:orientation="horizontal">
+                        android:layout_marginEnd="@dimen/dp20"
+                        android:orientation="horizontal"
+                        tools:ignore="RelativeOverlap">
 
                         <TextView
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:text="1"
+                            android:text="@string/one"
                             android:textColor="@color/colorBlack"
                             android:textSize="@dimen/sp17"
                             android:textStyle="bold" />
@@ -93,7 +68,7 @@
                         <TextView
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:text="/5"
+                            android:text="@string/five"
                             android:textSize="@dimen/sp15" />
                     </LinearLayout>
                 </RelativeLayout>
@@ -120,12 +95,12 @@
                 android:layout_height="@dimen/dp2"
                 android:background="@color/colorGrey_two"
                 android:layout_marginTop="@dimen/dp20"
-                android:layout_marginRight="@dimen/dp20"/>
+                android:layout_marginEnd="@dimen/dp20"/>
 
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginRight="@dimen/dp20"
+                android:layout_marginEnd="@dimen/dp20"
                 android:layout_marginBottom="@dimen/dp10"
                 android:orientation="vertical">
 
@@ -136,7 +111,7 @@
                     android:layout_marginTop="@dimen/dp10"
                     android:layout_marginBottom="@dimen/dp20"
                     android:gravity="center_horizontal"
-                    android:text="Categories"
+                    android:text="@string/categories"
                     android:textColor="@color/colorGrey_three"
                     android:textSize="@dimen/sp17" />
 
@@ -144,122 +119,64 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:orientation="horizontal"
-                    android:weightSum="5">
+                    android:weightSum="5"
+                    android:baselineAligned="false">
 
-                    <LinearLayout
+                    <TextView
                         android:layout_width="wrap_content"
-                        android:layout_height="match_parent"
-                        android:layout_gravity="center_vertical"
+                        android:layout_height="wrap_content"
                         android:layout_weight="1"
-                        android:orientation="vertical">
+                        android:drawableTop="@drawable/restaurant_icon"
+                        android:layout_marginEnd="@dimen/dp20"
+                        android:gravity="center_horizontal|center"
+                        android:textSize="@dimen/sp13"
+                        android:textColor="@color/charcoal"
+                        android:text="@string/restaurant" />
 
-                        <ImageView
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:layout_gravity="center|center_horizontal"
-                            android:src="@drawable/restaurant_icon" />
-
-                        <TextView
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:layout_gravity="center_horizontal"
-                            android:gravity="center_horizontal"
-                            android:text="Restaurant"
-                            android:textColor="@color/charcoal"
-                            android:textSize="@dimen/sp13" />
-                    </LinearLayout>
-
-                    <LinearLayout
+                    <TextView
                         android:layout_width="wrap_content"
-                        android:layout_height="match_parent"
+                        android:layout_height="wrap_content"
                         android:layout_weight="1"
-                        android:gravity="center_vertical"
-                        android:orientation="vertical">
+                        android:drawableTop="@drawable/wine_icon"
+                        android:layout_marginEnd="@dimen/dp20"
+                        android:gravity="center_horizontal|center"
+                        android:textSize="@dimen/sp13"
+                        android:textColor="@color/charcoal"
+                        android:text="@string/wine" />
 
-                        <ImageView
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:layout_gravity="center|center_horizontal"
-                            android:src="@drawable/wine_icon" />
 
-                        <TextView
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:layout_gravity="center_horizontal"
-                            android:gravity="center_horizontal"
-                            android:text="Wine"
-                            android:textColor="@color/charcoal"
-                            android:textSize="@dimen/sp13" />
-                    </LinearLayout>
-
-                    <LinearLayout
+                    <TextView
                         android:layout_width="wrap_content"
-                        android:layout_height="match_parent"
+                        android:layout_height="wrap_content"
                         android:layout_weight="1"
-                        android:gravity="center_vertical"
-                        android:orientation="vertical">
+                        android:drawableTop="@drawable/quick_fix_icon"
+                        android:layout_marginEnd="@dimen/dp20"
+                        android:gravity="center_horizontal|center"
+                        android:textSize="@dimen/sp13"
+                        android:textColor="@color/charcoal"
+                        android:text="@string/quick_fix" />
 
-                        <ImageView
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:layout_gravity="center|center_horizontal"
-                            android:src="@drawable/quick_fix_icon" />
-
-                        <TextView
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:layout_gravity="center|center_vertical"
-                            android:gravity="center_horizontal"
-                            android:text="Qick fix"
-                            android:textColor="@color/charcoal"
-                            android:textSize="@dimen/sp13" />
-                    </LinearLayout>
-
-                    <LinearLayout
+                    <TextView
                         android:layout_width="wrap_content"
-                        android:layout_height="match_parent"
-                        android:layout_gravity="center_vertical"
+                        android:layout_height="wrap_content"
                         android:layout_weight="1"
-                        android:orientation="vertical">
+                        android:drawableTop="@drawable/dessert_icon"
+                        android:layout_marginEnd="@dimen/dp20"
+                        android:gravity="center_horizontal|center"
+                        android:textSize="@dimen/sp13"
+                        android:textColor="@color/charcoal"
+                        android:text="@string/dessert" />
 
-                        <ImageView
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:layout_gravity="center|center_horizontal"
-                            android:src="@drawable/dessert_icon" />
-
-                        <TextView
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:layout_gravity="center_horizontal"
-                            android:gravity="center_horizontal"
-                            android:text="Dessert"
-                            android:textColor="@color/charcoal"
-                            android:textSize="@dimen/sp13" />
-                    </LinearLayout>
-
-                    <LinearLayout
+                    <TextView
                         android:layout_width="wrap_content"
-                        android:layout_height="match_parent"
-                        android:layout_gravity="center_vertical"
+                        android:layout_height="wrap_content"
                         android:layout_weight="1"
-                        android:orientation="vertical">
-
-                        <ImageView
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:layout_gravity="center|center_horizontal"
-                            android:src="@drawable/coffee_icon" />
-
-                        <TextView
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:layout_gravity="center_horizontal"
-                            android:gravity="center_horizontal"
-                            android:text="Coffe"
-                            android:textColor="@color/charcoal"
-                            android:textSize="@dimen/sp13" />
-                    </LinearLayout>
+                        android:drawableTop="@drawable/coffee_icon"
+                        android:layout_marginEnd="@dimen/dp20"
+                        android:gravity="center_horizontal|center"
+                        android:textSize="@dimen/sp13"
+                        android:textColor="@color/charcoal"
+                        android:text="@string/coffee" />
                 </LinearLayout>
 
             </LinearLayout>
@@ -269,7 +186,7 @@
                 android:layout_height="@dimen/dp2"
                 android:layout_marginBottom="@dimen/dp27"
                 android:background="@color/colorGrey_two"
-                android:layout_marginRight="@dimen/dp20"/>
+                android:layout_marginEnd="@dimen/dp20"/>
 
             <LinearLayout
                 android:layout_width="match_parent"
@@ -322,7 +239,7 @@
                         android:id="@+id/specail"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="Speical Offers"
+                        android:text="@string/speical_offers"
                         android:textColor="@color/colorBlack"
                         android:textSize="@dimen/sp21" />
 
@@ -331,10 +248,11 @@
                         android:layout_height="wrap_content"
                         android:layout_alignParentEnd="true"
                         android:layout_centerInParent="true"
-                        android:layout_marginRight="@dimen/dp20"
+                        android:layout_marginEnd="@dimen/dp20"
                         android:text="@string/view_more"
                         android:textColor="@color/colorRed"
-                        android:textSize="@dimen/sp13" />
+                        android:textSize="@dimen/sp13"
+                        tools:ignore="RelativeOverlap" />
                 </RelativeLayout>
 
                 <TextView
@@ -370,7 +288,7 @@
                     android:layout_height="@dimen/dp50"
                     android:layout_marginTop="@dimen/dp25"
                     android:layout_marginBottom="@dimen/dp20"
-                    android:gravity="center|left"
+                    android:gravity="start|center"
                     android:text="@string/columns"
                     android:textColor="@color/colorBlack"
                     android:textSize="@dimen/sp21" />
@@ -392,7 +310,6 @@
                     android:layout_width="match_parent"
                     android:layout_height="@dimen/dp108" />
             </LinearLayout>
-
         </LinearLayout>
     </ScrollView>
 
@@ -415,108 +332,58 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintBottom_toBottomOf="parent"
-        android:weightSum="5">
-        <LinearLayout
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:orientation="vertical"
-            android:layout_weight="1">
-            <ImageView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_gravity="center|center_horizontal"
-                android:src="@drawable/star_favorite_1498"/>
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_gravity="center_horizontal"
-                android:textSize="@dimen/sp10"
-                android:textColor="@color/charcoal"
-                android:gravity="center_horizontal"
-                android:text="@string/select" />
-        </LinearLayout>
-
-        <LinearLayout
+        android:weightSum="5"
+        android:baselineAligned="false">
+        <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_weight="1"
-            android:orientation="vertical">
-
-            <ImageView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_gravity="center|center_horizontal"
-                android:src="@drawable/shop_center_round_1140" />
-
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_gravity="center_horizontal"
-                android:gravity="center_horizontal"
-                android:text="@string/store"
-                android:textColor="@color/charcoal"
-                android:textSize="@dimen/sp10" />
-        </LinearLayout>
-
-        <LinearLayout
+            android:drawableTop="@drawable/star_favorite_1498"
+            android:layout_marginEnd="@dimen/dp20"
+            android:gravity="center_horizontal|center"
+            android:textSize="@dimen/sp10"
+            android:textColor="@color/charcoal"
+            android:text="@string/select" />
+        <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:orientation="vertical"
-            android:layout_weight="1">
-            <ImageView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_gravity="center|center_horizontal"
-                android:src="@drawable/book_1207"/>
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_gravity="center_horizontal"
-                android:textSize="@dimen/sp10"
-                android:textColor="@color/charcoal"
-                android:gravity="center_horizontal"
-                android:text="@string/magazine" />
-        </LinearLayout>
+            android:layout_weight="1"
+            android:drawableTop="@drawable/shop_center_round_1140"
+            android:layout_marginEnd="@dimen/dp20"
+            android:gravity="center_horizontal|center"
+            android:textSize="@dimen/sp10"
+            android:textColor="@color/charcoal"
+            android:text="@string/store" />
 
-        <LinearLayout
+        <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:orientation="vertical"
-            android:layout_weight="1">
-            <ImageView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_gravity="center|center_horizontal"
-                android:src="@drawable/cart_round_1169"/>
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_gravity="center_horizontal"
-                android:textSize="@dimen/sp10"
-                android:textColor="@color/charcoal"
-                android:gravity="center_horizontal"
-                android:text="@string/cart" />
-        </LinearLayout>
-
-        <LinearLayout
+            android:layout_weight="1"
+            android:drawableTop="@drawable/book_1207"
+            android:layout_marginEnd="@dimen/dp20"
+            android:gravity="center_horizontal|center"
+            android:textSize="@dimen/sp10"
+            android:textColor="@color/charcoal"
+            android:text="@string/magazine" />
+        <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:orientation="vertical"
-            android:layout_weight="1">
-            <ImageView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_gravity="center|center_horizontal"
-                android:src="@drawable/profile_round_1342"/>
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_gravity="center_horizontal"
-                android:textSize="@dimen/sp10"
-                android:textColor="@color/charcoal"
-                android:gravity="center_horizontal"
-                android:text="@string/me" />
-        </LinearLayout>
+            android:layout_weight="1"
+            android:drawableTop="@drawable/cart_round_1169"
+            android:layout_marginEnd="@dimen/dp20"
+            android:gravity="center_horizontal|center"
+            android:textSize="@dimen/sp10"
+            android:textColor="@color/charcoal"
+            android:text="@string/cart" />
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:drawableTop="@drawable/profile_round_1342"
+            android:layout_marginEnd="@dimen/dp20"
+            android:gravity="center_horizontal|center"
+            android:textSize="@dimen/sp10"
+            android:textColor="@color/charcoal"
+            android:text="@string/me" />
     </LinearLayout>
-
 </androidx.constraintlayout.widget.ConstraintLayout>
